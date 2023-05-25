@@ -66,7 +66,7 @@ $ cdk deploy
 With specific profile
 
 ```
-$ cdk deploy --profile test
+$ cdk deploy --parameters secretARN=<Put the DataDog API secret ARN Here>
 ```
 
 ## After Deploy

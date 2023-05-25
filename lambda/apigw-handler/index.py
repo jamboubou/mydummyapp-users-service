@@ -8,6 +8,8 @@ import logging
 import uuid
 import time
 
+
+
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
@@ -15,6 +17,7 @@ dynamodb_client = boto3.client("dynamodb")
 
 
 def handler(event, context):
+    
     table = os.environ.get("TABLE_NAME")
     site_url = os.environ.get("WEB_URL")
     logging.info(f"## Loaded table name from environemt variable DDB_TABLE: {table}")
@@ -41,7 +44,7 @@ def handler(event, context):
         logging.info("## Received request without a payload")
         message = "Request contains no body!"
         return {
-            "statusCode": 400,
+            "statusCode": 200,
             "headers": {"Content-Type": "application/json", "Access-Control-Allow-Origin": site_url},
             "body": json.dumps({"body": message}),
         }
