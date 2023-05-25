@@ -7,6 +7,8 @@ import json
 import logging
 import uuid
 import time
+from ddtrace.profiling import Profiler
+
 
 
 
@@ -17,7 +19,9 @@ dynamodb_client = boto3.client("dynamodb")
 
 
 def handler(event, context):
-    
+    prof = Profiler()
+    prof.start()
+
     table = os.environ.get("TABLE_NAME")
     site_url = os.environ.get("WEB_URL")
     logging.info(f"## Loaded table name from environemt variable DDB_TABLE: {table}")
