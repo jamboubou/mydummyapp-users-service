@@ -36,4 +36,3 @@ jobs:
             app_key: ${{secrets.DD_APP_KEY}}
             datadog_site: "datadoghq.eu"
             public_ids: 'vdx-6tk-y2y, e74-rzg-b2i'
-            config_path: './synthetics-config.json'
