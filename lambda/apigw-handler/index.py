@@ -1,5 +1,6 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: MIT-0
+ddtrace.profiling.auto.start_profiler()
 
 import boto3
 import os
@@ -7,7 +8,6 @@ import json
 import logging
 import uuid
 import time
-from ddtrace.profiling import Profiler
 
 
 
@@ -19,8 +19,6 @@ dynamodb_client = boto3.client("dynamodb")
 
 
 def handler(event, context):
-    prof = Profiler()
-    prof.start()
 
     table = os.environ.get("TABLE_NAME")
     site_url = os.environ.get("WEB_URL")
