@@ -1,7 +1,3 @@
-# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# SPDX-License-Identifier: MIT-0
-ddtrace.profiling.auto.start_profiler()
-
 import boto3
 import os
 import json
