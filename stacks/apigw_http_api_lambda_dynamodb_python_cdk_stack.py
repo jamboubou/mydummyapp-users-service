@@ -127,7 +127,7 @@ class ApigwHttpApiLambdaDynamodbPythonCdkStack(Stack):
             handler=api_hanlder,
             default_cors_preflight_options=apigw_.CorsOptions(
                 allow_origins=apigw_.Cors.ALL_ORIGINS,
-                allow_headers=['Content-Type','X-Amz-Date','Authorization','X-Api-Key','X-Amz-Security-Token','x-datadog-origin']
+                allow_headers=['Content-Type','X-Amz-Date','Authorization','X-Api-Key','X-Amz-Security-Token','x-datadog-origin','x-datadog-parent-id']
             )
         )
         users = api.root.add_resource("register")
