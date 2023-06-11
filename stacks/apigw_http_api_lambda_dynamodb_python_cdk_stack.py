@@ -110,7 +110,7 @@ class ApigwHttpApiLambdaDynamodbPythonCdkStack(Stack):
                 subnet_type=ec2.SubnetType.PRIVATE_WITH_EGRESS
             ),
             memory_size=1024,
-            timeout=Duration.minutes(5),
+            timeout=Duration.seconds(1),
         )
         datadog.add_lambda_functions([api_hanlder])
 
