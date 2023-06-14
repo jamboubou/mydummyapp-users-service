@@ -32,6 +32,7 @@ def handler(event, context):
             TableName=table,
             Item={"id": {"S": id}, "registrationTime": {"S": now}, "firstName": {"S": firstName},"lastName": {"S": lastName}, "eventID": {"S": eventID}},
         )
+        time.sleep(0.6)
         message = "Successfully registred: " + firstName + " " +  lastName + " to event: " + eventID
         return {
             "statusCode": 200,

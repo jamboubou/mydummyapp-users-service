@@ -43,7 +43,7 @@ class ApigwHttpApiLambdaDynamodbPythonCdkStack(Stack):
             env="prod",
             service="lambda-users",
             version="1.0",
-            tags="app:mydummyapp,function:register",
+            tags="app:mydummyapp,function:register, team:userserviceteam",
         )
 
         # VPC
